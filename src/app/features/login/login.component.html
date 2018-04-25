@@ -1,0 +1,17 @@
+<div class="row vertical-align">
+  <div class="col-md-4">
+    <pp-input-s [label]="'Username'" id='usernameInput' [name]="'username'" [(model)]="loginRequest.userName"
+      (modelChange)="onInputChange()"
+      [validations]="usernameVals"></pp-input-s>
+  </div>
+  <div class="col-md-4">
+    <pp-input-s [label]="'Password'" id='passwordInput' [name]="'password'" [type]="'password'" [(model)]="loginRequest.password"
+      (modelChange)="onInputChange()"
+      [validations]="passwordVals"></pp-input-s>
+  </div>
+  <div class="col-md-4">
+    <div style="padding-left:3px;padding-right:3px;height:50px;">
+      <button class="form-control btn btn-primary loginBtn" (click)="clickedLogin()">Log in</button>
+    </div>
+  </div>
+</div>
