@@ -7,21 +7,21 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'pp-component-wrapper',
     template: `
-    <pp-input-s
+    <app-input
         [id]="\'username\'"
         [(model)]="username"
         [validations]="usernameVals">
-    </pp-input-s>
-    <pp-input-s
+    </app-input>
+    <app-input
        [id]="\'password\'"
        [(model)]="password"
        [validations]="passwordVals">
-    </pp-input-s>
-    <pp-input-s
+    </app-input>
+    <app-input
       [id]="'answer'"
       [(model)]="answer"
       [validations]="securityVals">
-    </pp-input-s>
+    </app-input>
   `
 })
 class WrapperComponent {

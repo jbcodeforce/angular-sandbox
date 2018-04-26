@@ -8,10 +8,9 @@
 ## Module and declarations
 The purpose of a NgModule is to declare each thing you create in Angular, and group them together.
 * declarations is for things you’ll use in your templates: mainly components.
-* providers is for services
-declarations and providers do not have the same scope / visibility:
-* declarations / components are in local scope (private visibility),
-* providers / services are (generally) in global scope (public visibility)
+* providers is for services declarations and providers do not have the same scope / visibility:
+ * declarations / components are in local scope (private visibility),
+ * providers / services are (generally) in global scope (public visibility)
 
 Components you declared are only usable in the current module. If you need to use them outside, in other modules, you’ll have to export them. In the module below the components are declared and also exported as they are at the application global scope.
 ```
@@ -50,5 +49,5 @@ Modules to import only once
 https://medium.com/codingthesmartway-com-blog/angular-4-3-httpclient-accessing-rest-web-services-with-angular-2305b8fd654b
 
 ### Attribute binding
-When to use <element [attribute]=""  attribute2=""
+When to use <element [attribute]=""  versus attribute2=""
 https://stackoverflow.com/questions/39112904/property-binding-vs-attribute-interpolation

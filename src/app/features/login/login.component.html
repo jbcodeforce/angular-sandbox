@@ -1,13 +1,20 @@
 <div class="row vertical-align">
   <div class="col-md-4">
-    <pp-input-s [label]="'Username'" id='usernameInput' [name]="'username'" [(model)]="loginRequest.userName"
+    <app-input [label]="'Username'"
+      [id]="'usernameInput'"
+      [name]="'username'"
+      [(model)]="loginRequest.userName"
       (modelChange)="onInputChange()"
-      [validations]="usernameVals"></pp-input-s>
+      [validations]="usernameVals"></app-input>
   </div>
   <div class="col-md-4">
-    <pp-input-s [label]="'Password'" id='passwordInput' [name]="'password'" [type]="'password'" [(model)]="loginRequest.password"
+    <app-input [label]="'Password'"
+      [id]="'passwordInput'"
+      [name]="'password'"
+      [type]="'password'"
+      [(model)]="loginRequest.password"
       (modelChange)="onInputChange()"
-      [validations]="passwordVals"></pp-input-s>
+      [validations]="passwordVals"></app-input>
   </div>
   <div class="col-md-4">
     <div style="padding-left:3px;padding-right:3px;height:50px;">

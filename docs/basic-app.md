@@ -1,11 +1,11 @@
 # Basic Application Structure
-In this section I address:
+In this section I address the following subject:
 * [Main page Structure](#main-page)
-* Routing
+* [Routing](#routing)
+* [footer and header](#adding-footer-and-header)
 
 ## Main page
-When creating the application with `ng new` command the application is ready to run out of the box. But we want to add a home page, a login page, a standard header, footer and support internal routing.
-So first change the app.component.html to have just the page placeholders:
+When creating the application with `ng new` command, the application is ready to run immediately with `ng serve`. But we want to add a home page, a login page, a standard header, footer and support internal routing, to do so we need to change the app.component.html to have just the page placeholders:
 ```html
 <div class="container" style="position:relative;">
   <router-outlet></router-outlet>
@@ -53,10 +53,22 @@ We need to add a home component with `ng g component features/home` that we will
 
 ## Adding footer and header
 Any shared component are in shared folder.
-* Create a shared module
-* Create footer and header components
-* Add the SharedModule in import of the app module.
+* Create a shared module: `ng g module shared`
+* Create footer and header components: `ng g component shared/header`
+* Add those components in the export of the shared module
+ ```javascript
+     @NgModule({
+      imports: [
+        CommonModule
+      ],
+      declarations: [HeaderComponent,
+        FooterComponent],
+      exports: [FooterComponent,
+       HeaderComponent]
+    })
+ ```
+* Add the SharedModule in the imports of the app module.
 
-For each component we add basic tests on element presence.
- 
+For each component we add basic jasmine tests on element presence within the component.
+
 ## Adding

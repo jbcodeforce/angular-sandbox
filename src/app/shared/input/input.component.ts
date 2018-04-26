@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'pp-input-s',
+  selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
@@ -114,7 +114,10 @@ export class InputComponent implements OnInit {
           }
           break;
         case 'comparison':
-          if (this.comparisonVal !== this.model) {
+          // tslint:disable-next-line:no-empty
+          if (this.comparisonVal === this.model) {
+
+          } else {
             this.errorMsg = validation.msg;
           }
           break;
@@ -151,6 +154,12 @@ export class InputComponent implements OnInit {
           const noTrailingSpace_AND_AlphaNumSpecialChar = pswordRegEx.test(this.model);
           const startWithNonSpace = /^[\S].*$/.test(this.model);
           if (!noTrailingSpace_AND_AlphaNumSpecialChar || !startWithNonSpace) {
+            this.errorMsg = validation.msg;
+          }
+          break;
+        case 'aaMemberIDValidity':
+          const isValidAAMemberID = /^[a-zA-Z0-9_]{7}$/.test(this.model);
+          if (!isValidAAMemberID) {
             this.errorMsg = validation.msg;
           }
           break;
