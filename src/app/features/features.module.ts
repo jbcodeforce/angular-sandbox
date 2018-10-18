@@ -11,6 +11,6 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   declarations: [HomeComponent, MapdemoComponent],
-  exports: [HomeComponent]
+  exports: [HomeComponent, MapdemoComponent]
 })
 export class FeaturesModule { }

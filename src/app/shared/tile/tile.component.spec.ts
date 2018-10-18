@@ -41,7 +41,7 @@ describe('TileComponent', () => {
   });
 
   it('should contain a default title', () => {
-        const element = fixture.debugElement.nativeElement.querySelector('h2');
+        const element = fixture.debugElement.nativeElement.querySelector('h3');
         expect(element.textContent).toBe('Some title');
   });
 

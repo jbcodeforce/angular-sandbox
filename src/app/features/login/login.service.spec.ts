@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { LoginService } from './login.service';
-import { User } from '../../shared/user';
+import { User } from '../../shared/User';
 
 describe('LoginService', () => {
   let loginService: LoginService;

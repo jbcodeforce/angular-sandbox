@@ -1,14 +1,15 @@
 # Angular Sandbox
 
-The goal of this project is to illustrate some implementation practices used in different project, and from practices coming from http://angular.io.
+The goal of this project is to illustrate some implementation practices used in different project, and from practices coming from http://angular.io and other web source like stackoverflow.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6 withthe command `ng new angular-sandbox`.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6 with the command `ng new angular-sandbox`.
 
 ## Items covered
-* enforce login page
-* home page to have a list of features to present as tiles.
+* enforce login page TBD
+* home page to have a list of features as tiles which is a shared object
 * enhanced input element with validation rules
-* busy component
+* present a map with leaflet javascript library and marker loaded from a backend. This is also illustrating that we do not need BFF.  (See features/mapdemo)
+* busy component TBD
 
 ## Getting Started
 In the note [here](./docs/basic-app.md) we go over the basic structure , common part of a single page application.
