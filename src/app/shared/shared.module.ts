@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { InputComponent } from './input/input.component';
+import { TileComponent } from './tile/tile.component';
 
 @NgModule({
   imports: [
@@ -12,8 +13,10 @@ import { InputComponent } from './input/input.component';
   ],
   declarations: [ HeaderComponent,
     FooterComponent,
+    TileComponent,
     InputComponent ],
   exports: [ FooterComponent,
+    TileComponent,
    HeaderComponent,
    InputComponent ]
 })
