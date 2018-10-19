@@ -71,4 +71,27 @@ Any shared component are in shared folder.
 
 For each component we add basic jasmine tests on element presence within the component.
 
-## Adding
+## Map with Leaflet
+See tutorial [here](https://leafletjs.com/examples.html)
+
+* Install it with `npm --save install leaflet @types/leaflet`
+* Then modify `angular.json` file to add new styles:
+```
+"styles": [
+  "src/styles.css",
+ "./node_modules/leaflet/dist/leaflet.css"
+],
+```
+* Specify in the `src/tsconfig.app.json` to use the typescript version of the library Leaflet.
+```
+"compilerOptions": {
+  "outDir": "../out-tsc/app",
+  "baseUrl": "./",
+  "module": "es2015",
+  "types": ["leaflet"]
+},
+```
+* In the component to integrate the map add L variable with
+```
+import * as L from 'leaflet';
+```

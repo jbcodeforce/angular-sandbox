@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * enforce login page TBD
 * home page to have a list of features as tiles which is a shared object
 * enhanced input element with validation rules
-* present a map with leaflet javascript library and marker loaded from a backend. This is also illustrating that we do not need BFF.  (See features/mapdemo)
+* present a map with leaflet javascript library and marker loaded from a backend. This is also illustrating that we do not need BFF.  (See features/mapdemo) and summary [here](./docs/basic-app.md#map-with-leaflet)
 * busy component TBD
 
 ## Getting Started

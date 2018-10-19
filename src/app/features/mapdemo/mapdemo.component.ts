@@ -15,6 +15,8 @@ export class MapdemoComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    // center on Lille
+    // all mouse and touch interactions on the map are enabled, and it has zoom and attribution controls.
     const demomap = L.map('demomap').setView([50.6311634, 3.0599573], 12);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
