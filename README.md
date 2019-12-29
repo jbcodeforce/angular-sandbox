@@ -1,10 +1,25 @@
 # Angular Sandbox
 
-The goal of this project is to illustrate some implementation practices used in different project, and from practices coming from http://angular.io and other web source like stackoverflow.
+The goal of this project is to centralise some how-tos using angular. As this is not a technology I'm using on a daily basis, this repo, should help me to get back on track quickly.  It illustrates some implementation practices used in different project, and from practices coming from http://angular.io and other web source like stackoverflow.
+
+## Keep angular up to date
+
+Here are a set of command to do to change CLI at the global level:
+
+```shell
+# test current version outside of any angular project
+ng --version
+sudo npm uninstall -g @angular/cli
+# clear the cache
+sudo npm cache verify
+sudo npm cache clean
+sudo npm install -g @angular/cli@latest
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6 with the command `ng new angular-sandbox`.
 
 ## Items covered
+
 * enforce login page TBD
 * home page to have a list of features as tiles which is a shared object
 * enhanced input element with validation rules
@@ -12,9 +27,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * busy component TBD
 
 ## Getting Started
+
 In the note [here](./docs/basic-app.md) we go over the basic structure , common part of a single page application.
 
 ## Development - Build
+
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
