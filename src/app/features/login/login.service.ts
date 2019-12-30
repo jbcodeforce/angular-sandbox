@@ -1,21 +1,17 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../shared/User';
+import { User } from './User';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LoginService {
-  user: User;
 
-  constructor() {
-    // FIXME mockup
-    this.user = new User('eddie@email.con','Eddie','pwd');
+  login(email: string, passwd: string): User {
+
+    const userInfo: User = { email: email, password: passwd, firstname: 'test', access_token: 'testToken' };
+    return userInfo;
   }
 
-  login(uname: string, pwd: string): User {
-    // TODO add call to remote login service
-    return this.getCurrentUser();
-  }
-
-  getCurrentUser(): User {
-    return this.user;
-  }
+  
+  constructor() { }
 }

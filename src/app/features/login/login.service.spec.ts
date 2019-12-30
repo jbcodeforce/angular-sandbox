@@ -1,30 +1,19 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { LoginService } from './login.service';
-import { User } from '../../shared/User';
+import { User } from './User';
 
 describe('LoginService', () => {
-  let loginService: LoginService;
+  beforeEach(() => TestBed.configureTestingModule({}));
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [LoginService]
-    });
-    loginService = TestBed.get(LoginService);
-  });
-
-  it('should be created', inject([LoginService], (service: LoginService) => {
+  it('should be created', () => {
+    const service: LoginService = TestBed.get(LoginService);
     expect(service).toBeTruthy();
-  }));
-
-  it('should get a user when calling login given username and password', () => {
-    const user: User = loginService.login("eddie@email.com","pwd");
-    expect(user.firstname).toEqual('Eddie');
   });
 
-  it('should get a user when calling login get current user', () => {
-    const user: User = loginService.getCurrentUser();
-    expect(user.firstname).toEqual('Eddie');
-  });
-
+ it('should get a user when calling login given username and password', () => {
+    const service: LoginService = TestBed.get(LoginService);
+    const user: User = service.login("test@email.com","pwd");
+    expect(user.firstname).toEqual('test');
+   });
 });

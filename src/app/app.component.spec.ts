@@ -1,17 +1,12 @@
 import { TestBed, async } from '@angular/core/testing';
-import { SharedModule } from './shared/shared.module';
-import { FeaturesModule } from './features/features.module';
-import { RoutingModule } from './features/routing/routing.module';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        SharedModule,
-        FeaturesModule,
-        RoutingModule
+        RouterTestingModule
       ],
       declarations: [
         AppComponent
@@ -19,15 +14,22 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
+  it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
+  });
 
-  it(`should have as title 'app'`, async(() => {
+  it(`should have as title 'angular-sandbox'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Angular Sandbox App');
-  }));
+    expect(app.title).toEqual('angular-sandbox');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.content span').textContent).toContain('angular-sandbox app is running!');
+  });
 });

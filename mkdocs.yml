@@ -1,0 +1,17 @@
+site_name: Angular studies
+repo_url: https://github.com/jbcodeforce/angular-sandbox
+nav:
+  - Introduction: index.md
+  - Angular CLI: angularcli.md
+  - Basic App: basic-app.md
+ 
+
+theme: 
+  name: material
+extra_css: ["extra.css"]
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.smartsymbols
+  - pymdownx.superfences

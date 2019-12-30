@@ -1,11 +1,15 @@
 # Basic Application Structure
+
 In this section I address the following subject:
+
 * [Main page Structure](#main-page)
 * [Routing](#routing)
 * [footer and header](#adding-footer-and-header)
 
 ## Main page
+
 When creating the application with `ng new` command, the application is ready to run immediately with `ng serve`. But we want to add a home page, a login page, a standard header, footer and support internal routing, to do so we need to change the app.component.html to have just the page placeholders:
+
 ```html
 <div class="container" style="position:relative;">
   <router-outlet></router-outlet>
@@ -16,6 +20,7 @@ We need to import the angular router in the app.module, but in fact it is better
 We need to add a home component with `ng g component features/home` that we will enhance later.
 
 ## Routing
+
 * Add a routing module. with `ng g module features/routing`.
 * Define a route to home in a separate file (routes.ts) so it can be imported in test module.
 
@@ -52,6 +57,7 @@ We need to add a home component with `ng g component features/home` that we will
   ```
 
 ## Adding footer and header
+
 Any shared component are in shared folder.
 * Create a shared module: `ng g module shared`
 * Create footer and header components: `ng g component shared/header`
@@ -72,6 +78,7 @@ Any shared component are in shared folder.
 For each component we add basic jasmine tests on element presence within the component.
 
 ## Map with Leaflet
+
 See tutorial [here](https://leafletjs.com/examples.html)
 
 * Install it with `npm --save install leaflet @types/leaflet`

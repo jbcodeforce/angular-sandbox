@@ -12,14 +12,14 @@
 
 ## Module and declarations
 
-The purpose of a NgModule is to declare each thing you create in Angular, and group them together.
+The purpose of a NgModule is to declare each thing you create in Angular, and groups them together.
 
 * declarations is for things you’ll use in your templates: mainly components.
-* providers is for services declarations and providers do not have the same scope / visibility:
+* providers is for service declarations:
   * declarations / components are in local scope (private visibility),
   * providers / services are (generally) in global scope (public visibility)
 
-Components you declared are only usable in the current module. If you need to use them outside, in other modules, you’ll have to export them. In the module below the components are declared and also exported as they are at the application global scope.
+Components are only usable in the current module. If you need to use them outside the module, line in other modules, you’ll have to export them. In the module below the components are declared and also exported as they are at the application global scope.
 
 ```
 declarations: [
@@ -54,6 +54,10 @@ Modules to import only once
 * BrowserAnimationsModule or NoopAnimationsModule
 * any other module providing you services only.
 
+
+### Example of login module
+
+See the note [here](./dev-login.md)
 
 ### HttpClient
 

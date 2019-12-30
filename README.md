@@ -10,10 +10,16 @@ Here are a set of command to do to change CLI at the global level:
 # test current version outside of any angular project
 ng --version
 sudo npm uninstall -g @angular/cli
-# clear the cache
+# clear the npm cache
 sudo npm cache verify
 sudo npm cache clean
 sudo npm install -g @angular/cli@latest
+```
+
+Update existing project:
+
+```shell
+ng update @angular/core
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6 with the command `ng new angular-sandbox`.
