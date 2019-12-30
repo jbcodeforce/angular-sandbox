@@ -4,7 +4,7 @@ The goal of this project is to centralise some how-tos using angular. As this is
 
 ## Keep angular up to date
 
-Here are a set of command to do to change CLI at the global level:
+Here are a set of commands to change angular CLI at the global level:
 
 ```shell
 # test current version outside of any angular project
@@ -16,17 +16,17 @@ sudo npm cache clean
 sudo npm install -g @angular/cli@latest
 ```
 
-Update existing project:
+And then update an existing project:
 
 ```shell
 ng update @angular/core
 ```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6 with the command `ng new angular-sandbox`.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) with the command `ng new angular-sandbox`.
 
 ## Items covered
 
-* enforce login page TBD
+* enforce login page (see how the login page was developed [here]())
 * home page to have a list of features as tiles which is a shared object
 * enhanced input element with validation rules
 * present a map with leaflet javascript library and marker loaded from a backend. This is also illustrating that we do not need BFF.  (See features/mapdemo) and summary [here](./docs/basic-app.md#map-with-leaflet)
@@ -46,7 +46,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
-### Build
+### Build Angular App
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 

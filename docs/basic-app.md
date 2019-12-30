@@ -15,6 +15,7 @@ When creating the application with `ng new` command, the application is ready to
   <router-outlet></router-outlet>
 </div>
 ```
+
 We need to import the angular router in the app.module, but in fact it is better to isolate the main routing in its own module, and when a feature support page navigation it will define its own routes.
 
 We need to add a home component with `ng g component features/home` that we will enhance later.
@@ -62,6 +63,7 @@ Any shared component are in shared folder.
 * Create a shared module: `ng g module shared`
 * Create footer and header components: `ng g component shared/header`
 * Add those components in the export of the shared module
+
  ```javascript
      @NgModule({
       imports: [
@@ -73,6 +75,7 @@ Any shared component are in shared folder.
        HeaderComponent]
     })
  ```
+
 * Add the SharedModule in the imports of the app module.
 
 For each component we add basic jasmine tests on element presence within the component.
@@ -83,6 +86,7 @@ See tutorial [here](https://leafletjs.com/examples.html)
 
 * Install it with `npm --save install leaflet @types/leaflet`
 * Then modify `angular.json` file to add new styles:
+
 ```
 "styles": [
   "src/styles.css",
@@ -90,7 +94,8 @@ See tutorial [here](https://leafletjs.com/examples.html)
 ],
 ```
 * Specify in the `src/tsconfig.app.json` to use the typescript version of the library Leaflet.
-```
+
+```json
 "compilerOptions": {
   "outDir": "../out-tsc/app",
   "baseUrl": "./",
@@ -98,7 +103,9 @@ See tutorial [here](https://leafletjs.com/examples.html)
   "types": ["leaflet"]
 },
 ```
+
 * In the component to integrate the map add L variable with
+
 ```
 import * as L from 'leaflet';
 ```

@@ -4,6 +4,7 @@ nav:
   - Introduction: index.md
   - Angular CLI: angularcli.md
   - Basic App: basic-app.md
+  - Login page development: dev-login.md
  
 
 theme: 
