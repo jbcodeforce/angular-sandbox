@@ -7,7 +7,7 @@ The application is served via a simple python flask app, see [this section](#pyt
 ## Must read
 
 * [https://angular.io/tutorial](https://angular.io/tutorial)
-*
+
 
 ## Installation
 
@@ -19,7 +19,9 @@ sudo npm install -g @angular/cli@latest
 export PATH=$PATH;~/.nvm/versions/node/v8.9.4/lib/node_modules/node/lib/node_modules/node/bin
 ```
 
-## angular App Development 
+## Angular App Development 
+
+The app is created with the command: `ng new angular-sandbox`.
 
 ### Development server locally
 
@@ -44,21 +46,23 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Python Flask Server Development
 
-The folder `angularApp` includes a python flask and an angular SPA. The angular SPA was created using `ng new angularApp`. The package.json was modified to specify the output directory when compiling typescript to js should be the static folder:
+The folder `server` includes a python Flask to serve the Angular App. The `angular.json` for the Angular app was modified to specify the output directory when compiling typescript to js should be the static folder used by the server:
 
-```
+```json
 "build": {
     "builder": "@angular-devkit/build-angular:browser",
     "options": {
     "outputPath": "static",
 ```
 
-So now any `ng build` compile the SPA for python Flask to serve. The flask app is angularApp.py and it render the index.html:
+So now any `ng build --prod --base-href  /static --deploy-url /static/` compiles the SPA code for python Flask to serve. The flask app is `server/angularApp.py` and it renders the `index.html`. The baseref is /static to get access to the generated javascripts and assets.
 
-```
+```python
+from flask import Flask,send_from_directory
+
 @app.route("/")
 def hello():
-    return render_template('index.html')
+    return send_from_directory('./static','index.html')
 ```
 
 ## Continuous deployment

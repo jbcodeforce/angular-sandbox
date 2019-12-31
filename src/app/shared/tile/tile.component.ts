@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DomSanitizer, SafeStyle }  from '@angular/platform-browser';
 import { Router }   from '@angular/router';
 
 @Component({

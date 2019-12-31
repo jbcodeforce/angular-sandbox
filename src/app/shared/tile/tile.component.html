@@ -3,7 +3,6 @@
       <p>{{description}}</p>
 
 
-      <a *ngIf="externalUrl && !urlMdPath" href={{urlPath}}>{{buttonName}}</a>
-      <button mat-raised-button *ngIf="urlMdPath" (click)="openDialog()">{{buttonName}}</button>
-      <button id="button" *ngIf="!externalUrl && !urlMdPath" mat-button (click)="submit()" style="color: white;background-color: {{color}};" class="btn btn-primary">{{buttonName}}</button>
-</div>
+      <a *ngIf="externalUrl && !urlPath" href={{urlPath}}>{{buttonName}}</a>
+      <button mat-raised-button *ngIf="urlPath" (click)="submit()">{{buttonName}}</button>
+   </div>

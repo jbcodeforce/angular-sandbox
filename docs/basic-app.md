@@ -22,8 +22,8 @@ We need to add a home component with `ng g component features/home` that we will
 
 ## Routing
 
-* Add a routing module. with `ng g module features/routing`.
-* Define a route to home in a separate file (routes.ts) so it can be imported in test module.
+* Add a routing module. with `ng g module features/app-routing`.
+* Define a route to home routes array.
 
  ```javascript
  export const routes: Routes = [
@@ -31,11 +31,10 @@ We need to add a home component with `ng g component features/home` that we will
     { path: '**', redirectTo: '/home', pathMatch: 'full'}
  ];
  ```
+
 * Add the routing definition in the routing module and export the RouterModule.
 
   ```javascript
-  import { routes } from './routes';
-
   @NgModule({
     imports: [
       RouterModule.forRoot(routes, {
@@ -44,24 +43,26 @@ We need to add a home component with `ng g component features/home` that we will
       }),
       CommonModule
     ],
-    exports: [RouterModule],
+    exports: [AppRoutingModule],
   });
   ```
 
 * Add the import RoutingModule in the main app Module
+
   ```javascript
-  import { RoutingModule } from './features/routing/routing.module';
+  import { AppRoutingModule } from './features/app-routing.module';
   imports: [
     BrowserModule,
-    RoutingModule
+    AppRoutingModule
   ],
   ```
 
 ## Adding footer and header
 
 Any shared component are in shared folder.
+
 * Create a shared module: `ng g module shared`
-* Create footer and header components: `ng g component shared/header`
+* Create footer and header components: `ng g component shared/header` and `ng g component shared/footer` 
 * Add those components in the export of the shared module
 
  ```javascript

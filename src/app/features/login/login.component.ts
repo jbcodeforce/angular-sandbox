@@ -11,7 +11,8 @@ export class LoginComponent implements OnInit {
 
   
  loginForm;
-
+ errorMessage: string;
+ 
   constructor(
     private loginService: LoginService,
     private formBuilder: FormBuilder
