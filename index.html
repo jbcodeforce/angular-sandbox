@@ -272,8 +272,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#angular-app-development" title="angular App Development" class="md-nav__link">
-    angular App Development
+  <a href="#angular-app-development" title="Angular App Development" class="md-nav__link">
+    Angular App Development
   </a>
   
     <nav class="md-nav">
@@ -449,8 +449,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#angular-app-development" title="angular App Development" class="md-nav__link">
-    angular App Development
+  <a href="#angular-app-development" title="Angular App Development" class="md-nav__link">
+    Angular App Development
   </a>
   
     <nav class="md-nav">
@@ -568,8 +568,7 @@
 <p>The application is served via a simple python flask app, see <a href="#python-flask-server-development">this section</a> from some explanations.</p>
 <h2 id="must-read">Must read</h2>
 <ul>
-<li><a href="https://angular.io/tutorial">https://angular.io/tutorial</a>
-*</li>
+<li><a href="https://angular.io/tutorial">https://angular.io/tutorial</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
 <p>Install last version of Angular CLI</p>
@@ -578,7 +577,8 @@
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span><span class="p">;</span>~/.nvm/versions/node/v8.9.4/lib/node_modules/node/lib/node_modules/node/bin
 </pre></div>
 
-<h2 id="angular-app-development">angular App Development</h2>
+<h2 id="angular-app-development">Angular App Development</h2>
+<p>The app is created with the command: <code>ng new angular-sandbox</code>.</p>
 <h3 id="development-server-locally">Development server locally</h3>
 <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
 <h3 id="code-scaffolding">Code scaffolding</h3>
@@ -591,17 +591,19 @@
 <p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.
 Before running the tests make sure you are serving the app via <code>ng serve</code>.</p>
 <h2 id="python-flask-server-development">Python Flask Server Development</h2>
-<p>The folder <code>angularApp</code> includes a python flask and an angular SPA. The angular SPA was created using <code>ng new angularApp</code>. The package.json was modified to specify the output directory when compiling typescript to js should be the static folder:</p>
-<div class="codehilite"><pre><span></span>&quot;build&quot;: {
-    &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
-    &quot;options&quot;: {
-    &quot;outputPath&quot;: &quot;static&quot;,
+<p>The folder <code>server</code> includes a python Flask to serve the Angular App. The <code>angular.json</code> for the Angular app was modified to specify the output directory when compiling typescript to js should be the static folder used by the server:</p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;build&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;@angular-devkit/build-angular:browser&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;outputPath&quot;</span><span class="p">:</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span>
 </pre></div>
 
-<p>So now any <code>ng build</code> compile the SPA for python Flask to serve. The flask app is angularApp.py and it render the index.html:</p>
-<div class="codehilite"><pre><span></span>@app.route(&quot;/&quot;)
-def hello():
-    return render_template(&#39;index.html&#39;)
+<p>So now any <code>ng build --prod --base-href  /static --deploy-url /static/</code> compiles the SPA code for python Flask to serve. The flask app is <code>server/angularApp.py</code> and it renders the <code>index.html</code>. The baseref is /static to get access to the generated javascripts and assets.</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span><span class="n">send_from_directory</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="s1">&#39;./static&#39;</span><span class="p">,</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
 </pre></div>
 
 <h2 id="continuous-deployment">Continuous deployment</h2>
